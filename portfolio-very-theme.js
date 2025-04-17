@@ -60,6 +60,52 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       h3 span {
         font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
       }
+
+ 
+div h1 {
+  margin-top: 200px;
+}
+div {
+  padding: 100px;
+  width: calc(100vw - 200px);
+  overflow-x: hidden;
+  height: 100vh;
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}
+
+your-banner a {
+  border: 2px solid green;
+  padding: 10px;
+  display: inline-block;
+  margin: 10px;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+}
+
+your-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000066;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  height: 100px;
+  right: 0;
+  z-index: 1;
+}
+
     `];
   }
 
