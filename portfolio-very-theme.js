@@ -46,9 +46,6 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         margin: var(--ddd-spacing-2);
         padding: var(--ddd-spacing-4);
       }
-      h3 span {
-        font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
-      }
 
       div {
         padding: 100px;
@@ -60,12 +57,20 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
       .red {
         background-color: red;
+        padding: 20px;
       }
       .yellow {
         background-color: yellow;
+        padding: 20px;
+       
       }
       .blue {
         background-color: blue;
+        padding: 20px;
+      }
+      .green {
+        background-color: green;
+        padding: 20px;
       }
 
 
@@ -78,7 +83,32 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 <div class="wrapper">
   <h1><span>${this.t.title}</span>${this.title}</h1>
   <slot></slot>
+  </div>
+  
+      <div class="red">
+        <a name="2"></a>
+        <h1>Page 2</h1>
+      </div>
+
+      <div class="blue">
+          <a name="3"></a>
+          <h1>Page 3</h1>
+      </div>
+
+      <div class="yellow">
+          <a name="4"></a>
+          <h1>Page 4</h1>
+      </div>
+
+      <div class="green">
+          <a name="5"></a>
+          <h1>Page 5</h1>
+      </div>
+  
+    </div>
+
   <scroll-button></scroll-button>
+
 </div>`;
   }
 
