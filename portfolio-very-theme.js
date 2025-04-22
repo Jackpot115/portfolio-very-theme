@@ -71,40 +71,23 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
   }
 
   // Lit render the HTML
-  //NEED TO PUT EACH DIV INSIDE THE WRAPPER DIV
+
   render() {
     return html`
 
       <div class="wrapper">
 
-    
       <slot></slot>
-
+      
       </div>
   
-      <div class="grey">
-        <a name="Home"></a>
-        <h1>Page 2</h1>
-      </div>
-
-      <div class="grey">
-          <a name="About"></a>
-          <h1>Page 3</h1>
-      </div>
-
-      <div class="grey">
-          <a name="Project"></a>
-          <h1>Page 4</h1>
-      </div>
-
-      <div class="Contact">
-          <a name="5"></a>
-          <h1>Page 5</h1>
-      </div>
+    
   
+      <scroll-button></scroll-button>
+      
     </div>
 
-  <scroll-button></scroll-button>
+
 
 </div>`;
   }

@@ -6,10 +6,26 @@
  */
 import { LitElement, html, css } from "lit";
 
-class YourBanner extends LitElement {
-  static get tag() {
-    return "your-banner";
+
+class footer extends LitElement {
+    
+    static get tag() {
+    return "footer";
   }
+
+  constructor() {
+    super();
+    this.title = "";
+  }
+
+  // Lit reactive properties
+  static get properties() {
+    return {
+      ...super.properties,
+      title: { type: String },
+    };
+  }
+
   static styles = css`
     :host {
       display: block;
@@ -21,30 +37,17 @@ class YourBanner extends LitElement {
     .wrapper {
       padding: var(--ddd-spacing-4);
       margin: var(--ddd-spacing-2);
-      position: fixed;
-      width: 1415px;
-      height: 15px;
-      background-color:#D2B48C;
-      text-align: center;
-      word-spacing: 10px;
     }
-    .top-bar-buttons a {
-      color: var(--ddd-theme-primary);
-      font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
-      padding: 10px;
-      border-radius: 5px;
-    }
+    
   
     `;
 
   render() {
     return html`
     <div class="wrapper">
-      <div class="top-bar-buttons">
-    <a href="#1">Home</a>
-    <a href="#2">About</a>
-    <a href="#3">Projects</a>
-    <a href="#4">Donate</a>
+     
+    <slot></slot>
+
       </div>
     </div>`;
   }
@@ -57,4 +60,4 @@ class YourBanner extends LitElement {
   }
 }
 
-globalThis.customElements.define(YourBanner.tag, YourBanner);
+globalThis.customElements.define(footer.tag, footer);
