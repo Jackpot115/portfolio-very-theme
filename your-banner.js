@@ -22,7 +22,7 @@ class YourBanner extends LitElement {
       padding: var(--ddd-spacing-4);
       margin: var(--ddd-spacing-2);
       position: fixed;
-      width: 1415px;
+      width: 1375px;
       height: 15px;
       background-color:#D2B48C;
       text-align: center;
