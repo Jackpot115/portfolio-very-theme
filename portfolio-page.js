@@ -41,7 +41,7 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
     :host {
     background-color: var(--ddd-theme-accent);
     font-family: var(--ddd-font-navigation);
-    width: 100%; 
+    width: 1000px; 
     height: 100vh;  
     display: block;
     }
