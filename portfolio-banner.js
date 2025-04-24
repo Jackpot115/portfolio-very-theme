@@ -45,6 +45,7 @@ class YourBanner extends LitElement {
     <a href="#2">About</a>
     <a href="#3">Projects</a>
     <a href="#4">Donate</a>
+    <a href="#5">Contact</a>
       </div>
     </div>`;
   }

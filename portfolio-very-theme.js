@@ -50,7 +50,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       div {
         padding: 100px;
         overflow-x: hidden;
-        height: 100vh;
+        height: 90vh;
         background-color: grey;
       }
 
@@ -80,10 +80,9 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       <slot></slot>
       
       </div>
-  
-    
-  
+
       <scroll-button></scroll-button>
+
       
     </div>
 

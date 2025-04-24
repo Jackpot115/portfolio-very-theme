@@ -48,6 +48,7 @@ class footer extends LitElement {
      
     <slot></slot>
 
+
       </div>
     </div>`;
   }
