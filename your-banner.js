@@ -17,12 +17,11 @@ class YourBanner extends LitElement {
       background-color: var(--ddd-theme-accent);
       font-family: var(--ddd-font-navigation);
     }
-
     .wrapper {
       padding: var(--ddd-spacing-4);
       margin: var(--ddd-spacing-2);
       position: fixed;
-      width: 1375px;
+      width: 1415px;
       height: 12px;
       background-color:#D2B48C;
       text-align: center;

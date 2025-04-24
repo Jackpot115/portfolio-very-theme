@@ -41,7 +41,7 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
     :host {
     background-color: var(--ddd-theme-accent);
     font-family: var(--ddd-font-navigation);
-    width: 1000px; 
+    width: 100%; 
     height: 100vh;  
     display: block;
     }
@@ -53,6 +53,11 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
     padding-right: 50px;
     }
 
+    .image {
+    width: 200px;
+    height: 200px; 
+    }
+
 `];
 }
 
@@ -60,13 +65,37 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
 
   render() {
     return html`
-      <div class="wrapper">
-      <h1>${this.title}</h1>
+    <h1>${this.title}</h1>
+      <div class="wrapper" @click="${this.thing}">
       <slot></slot>
       </div> 
 
 </div>`;
   }
+
+
+  firstUpdated(changedProperties) {
+    if (super.firstUpdated) {
+      super.firstUpdated(changedProperties);
+    }
+    this.shadowRoot.querrySelector('.wrapper').addEventListener('click', this.thing);
+}
+
+
+  thing (e) {
+    console. log(e.target);
+  }
+
+    connectedCallback(){
+        super.connectedCallback();
+        const page = this.getAttribute("breakpoint");
+
+        this.dispatchEvent (new CustomEvent ('new-page'), {
+        detail: { breakpoint }, 
+        bubbles: true, 
+        composed: true 
+        });
+    }
 
 }
 

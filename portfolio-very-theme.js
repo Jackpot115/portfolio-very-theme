@@ -63,26 +63,18 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   render() {
     return html`
-
-      <div class="wrapper">
+      <your-banner></your-banner>
+      <div class="wrapper" @page-added="${this.addPage}">
       <slot></slot>
       <scroll-button></scroll-button>
-      </div>
-      
-    </div>
-
-
-
-</div>`;
+    </div>`;
   }
 
-  /**
-   * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-      .href;
+  addPage(e) {
+    console.log(e.detail.value.title);
   }
+
+  
 }
 
 globalThis.customElements.define(PortfolioVeryTheme.tag, PortfolioVeryTheme);
