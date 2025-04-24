@@ -20,7 +20,6 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
-    this.title = "";
     this.pagenumber=null;
   }
 
@@ -28,7 +27,6 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
   static get properties() {
     return {
       ...super.properties,
-      title: { type: String },
       pagenumber: { type: Number }
     };
   }
@@ -53,10 +51,6 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
     padding-right: 50px;
     }
 
-    .image {
-    width: 200px;
-    height: 200px; 
-    }
 
 `];
 }
@@ -65,7 +59,6 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
 
   render() {
     return html`
-    <h1>${this.title}</h1>
       <div class="wrapper" @click="${this.thing}">
       <slot></slot>
       </div> 
@@ -73,7 +66,7 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
 </div>`;
   }
 
-  
+
   thing (e) {
     console. log(e.target);
   }
