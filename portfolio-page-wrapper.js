@@ -28,18 +28,10 @@ class portfolioPageWrapper extends LitElement {
 
   static styles = css`
     :host {
-      display: block;
-      color: var(--ddd-theme-primary);
-      background-color: var(--ddd-theme-accent);
-      font-family: var(--ddd-font-navigation);
+        background-color: var(--ddd-theme-accent);
+        font-family: var(--ddd-font-navigation);
+        display: inline-block;
     }
-
-    .wrapper {
-      padding: var(--ddd-spacing-4);
-      margin: var(--ddd-spacing-2);
-    }
-    
-  
     `;
 
   render() {

@@ -1,15 +1,10 @@
-//This will be the creation of how the banner will look.
-
-/**
- * Copyright 2025 Matt C
- * @license Apache-2.0, see LICENSE for full text.
- */
 import { LitElement, html, css } from "lit";
 
 class YourBanner extends LitElement {
   static get tag() {
     return "your-banner";
   }
+
   static styles = css`
     :host {
       display: block;
@@ -23,7 +18,7 @@ class YourBanner extends LitElement {
       position: fixed;
       width: 1415px;
       height: 12px;
-      background-color:#D2B48C;
+      background-color: #D2B48C;
       text-align: center;
       word-spacing: 10px;
     }
@@ -32,23 +27,31 @@ class YourBanner extends LitElement {
       font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
       padding: 10px;
       border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
     }
-  
-    `;
+  `;
 
   render() {
     return html`
-    <div class="wrapper">
-      <div class="top-bar-buttons">
-    <a href="#1">Home</a>
-    <a href="#2">About</a>
-    <a href="#3">Projects</a>
-    <a href="#4">Donate</a>
-    <a href="#5">Contact</a>
+      <div class="wrapper">
+        <div class="top-bar-buttons">
+          <a @click=${() => this.scrollToPage(1)}>Home</a>
+          <a @click=${() => this.scrollToPage(2)}>About</a>
+          <a @click=${() => this.scrollToPage(3)}>Projects</a>
+          <a @click=${() => this.scrollToPage(4)}>Donate</a>
+          <a @click=${() => this.scrollToPage(5)}>Contact</a>
+        </div>
       </div>
-    </div>`;
+    `;
   }
- 
+
+  scrollToPage(num) {
+    const target = document.querySelector(`[pagenumber="${num}"]`);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 }
 
 globalThis.customElements.define(YourBanner.tag, YourBanner);

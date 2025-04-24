@@ -22,14 +22,14 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   constructor() {
     super();
-    this.title = "";
+    this.pages= [];
   }
 
   // Lit reactive properties
   static get properties() {
     return {
       ...super.properties,
-      title: { type: String },
+      pages: { type: Array },
     };
   }
 
@@ -55,6 +55,11 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         right: 0;
       }
 
+      a {
+        color: white;
+        font-size: var(--ddd-font-size-m);
+      }
+
 
     `];
   }
@@ -63,18 +68,34 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   render() {
     return html`
-      <your-banner></your-banner>
+      <your-banner>
+    <ul>
+       ${this.pages.map((page, index) => html`<li><a href="#${page.number}" @click="${this.linkChange}" data-index="${index}">${page.title}</a></li>`)}
+    </ul>
+      </your-banner>
       <div class="wrapper" @page-added="${this.addPage}">
       <slot></slot>
       <scroll-button></scroll-button>
     </div>`;
   }
 
-  addPage(e) {
-    console.log(e.detail.value.title);
+  linkChange(e) {
+    let number = parseInt(e.target.getAttribute('data-index'));
+    if (number >= 0) {
+      this.pages[number].element.scrollIntoView();
+    }
   }
 
-  
+  addPage(e) {
+    const element = e.detail.value
+    const page = {
+      number: element.pagenumber,
+      title: element.title,
+      element: element,
+    }
+    this.pages = [...this.pages, page];
+  }
+
 }
 
 globalThis.customElements.define(PortfolioVeryTheme.tag, PortfolioVeryTheme);

@@ -21,7 +21,7 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
   constructor() {
     super();
     this.title = "";
-    this.breakbpoint=null;
+    this.pagenumber=null;
   }
 
   // Lit reactive properties
@@ -29,7 +29,7 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
     return {
       ...super.properties,
       title: { type: String },
-      breakpoint: { type: Number }
+      pagenumber: { type: Number }
     };
   }
 
@@ -73,30 +73,24 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
 </div>`;
   }
 
+  
+  thing (e) {
+    console. log(e.target);
+  }
 
   firstUpdated(changedProperties) {
     if (super.firstUpdated) {
       super.firstUpdated(changedProperties);
     }
-    this.shadowRoot.querrySelector('.wrapper').addEventListener('click', this.thing);
-}
 
-
-  thing (e) {
-    console. log(e.target);
+    this.dispatchEvent(new CustomEvent('page-added', {
+      bubbles: true,
+      composed: true,
+      detail: {
+        value: this
+      }
+    }))
   }
-
-    connectedCallback(){
-        super.connectedCallback();
-        const page = this.getAttribute("breakpoint");
-
-        this.dispatchEvent (new CustomEvent ('new-page'), {
-        detail: { breakpoint }, 
-        bubbles: true, 
-        composed: true 
-        });
-    }
-
 }
 
 globalThis.customElements.define(PortfolioPage.tag, PortfolioPage);
