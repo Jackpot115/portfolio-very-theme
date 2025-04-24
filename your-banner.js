@@ -8,7 +8,7 @@ import { LitElement, html, css } from "lit";
 
 class YourBanner extends LitElement {
   static get tag() {
-    return "your-banner";
+    return "portfolio-banner";
   }
   static styles = css`
     :host {
