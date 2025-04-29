@@ -8,6 +8,41 @@
   <meta name="Description" content="Demonstration for portfolio-very-theme">
 
 
+<style>
+ :root,
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+.profile-pic {
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        border: 4px solid var(--ddd-theme-primary);
+    }
+    .bio-text {
+        max-width: 600px;
+        text-align: left;
+        margin-left: auto;
+        font-size: var(--ddd-spacing-6);
+        padding-top: 10px;
+      }
+
+
+
+
+
+
+
+
+
+
+</style>
+
+  
+
   <title>portfolio-very-theme</title>
 </head>
 
@@ -23,9 +58,10 @@
 
   <portfolio-page title="About Me" pagenumber="1">
       <h1>Home</h1>
+      <div class="bio-text">
       <p>My name is Matt and this is my website!</p>
-      <img src="https://pbs.twimg.com/profile_images/1890430994546561024/QE3owhEr_400x400.jpg" alt="A picture of me" />
-      <p>Goofy aha man...</p>
+      </div>
+      <img src="IST_3745.jpg" alt="A picture of me" class="profile-pic" />
   </portfolio-page>
 
   <portfolio-page title="About" pagenumber="2">

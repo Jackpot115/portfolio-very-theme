@@ -65,6 +65,19 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
           bottom: var(--ddd-spacing-5);
         }
 
+        @media (max-width: 768px) {
+  your-banner .top-bar-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  your-banner .top-bar-buttons a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+
 
     `];
   }

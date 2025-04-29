@@ -7,21 +7,26 @@ class YourBanner extends LitElement {
 
   static styles = css`
     :host {
-      display: block;
+      display: inline-flex;
       color: var(--ddd-theme-primary);
       background-color: var(--ddd-theme-accent);
       font-family: var(--ddd-font-navigation);
     }
     .wrapper {
-      padding: var(--ddd-spacing-4);
-      margin: var(--ddd-spacing-2);
-      position: fixed;
-      width: 1415px;
-      height: 12px;
-      background-color: #D2B48C;
-      text-align: center;
-      word-spacing: 10px;
+    padding: var(--ddd-spacing-4);
+    margin: var(--ddd-spacing-2);
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: #D2B48C;
+    text-align: center;
+    word-spacing: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
     }
+
     .top-bar-buttons a {
       color: var(--ddd-theme-primary);
       font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));

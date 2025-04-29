@@ -44,6 +44,14 @@ export class PortfolioPage extends DDDSuper((LitElement)) {
     display: block;
     }
 
+    img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+
 `];
 }
 
@@ -58,24 +66,6 @@ export class PortfolioPage extends DDDSuper((LitElement)) {
 </div>`;
   }
 
-
-  thing (e) {
-    console. log(e.target);
-  }
-
-  firstUpdated(changedProperties) {
-    if (super.firstUpdated) {
-      super.firstUpdated(changedProperties);
-    }
-
-    this.dispatchEvent(new CustomEvent('page-added', {
-      bubbles: true,
-      composed: true,
-      detail: {
-        value: this
-      }
-    }))
-  }
 }
 
 globalThis.customElements.define(PortfolioPage.tag, PortfolioPage);
