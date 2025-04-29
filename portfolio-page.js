@@ -12,7 +12,7 @@ import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
  * @demo index.html
  * @element portfolio-very-theme
  */
-export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
+export class PortfolioPage extends DDDSuper((LitElement)) {
 
   static get tag() {
     return "portfolio-page";
@@ -43,14 +43,6 @@ export class PortfolioPage extends DDDSuper(I18NMixin(LitElement)) {
     height: 100vh;  
     display: block;
     }
-
-    h1 {
-    text-align: right;
-    color: rgb(204, 204, 253);
-    background-image: linear-gradient(to right, rgba(122, 43, 73, 0), rgba(122, 43, 73, 0.5));
-    padding-right: 50px;
-    }
-
 
 `];
 }

@@ -59,6 +59,11 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         color: white;
         font-size: var(--ddd-font-size-m);
       }
+      scroll-button {
+          position: fixed;
+          right: var(--ddd-spacing-5);
+          bottom: var(--ddd-spacing-5);
+        }
 
 
     `];
