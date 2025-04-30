@@ -42,7 +42,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
         color: var(--ddd-theme-primary);
         background-color: var(--ddd-theme-accent);
         font-family: var(--ddd-font-navigation);
-        background-color: grey;
+        background-color: var(--ddd-theme-default-navy65);
       }
       .wrapper {
         padding: var(--ddd-spacing-4);
@@ -51,8 +51,8 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       .scroll-button {
         position: fixed;
         margin: var(--ddd-spacing-4);
-        bottom: 0;
-        right: 0;
+        bottom: var(--ddd-spacing-0); 
+        right: var(--ddd-spacing-0);
       }
 
       a {
