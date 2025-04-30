@@ -18,20 +18,20 @@ class YourBanner extends LitElement {
     position: fixed;
     width: 100%;
     height: auto;
-    background-color: #D2B48C;
+    background-color: var(--ddd-theme-default-slateGray);
     text-align: center;
-    word-spacing: 10px;
+    word-spacing: var(--ddd-spacing-3);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: var(--ddd-spacing-3);
     }
 
     .top-bar-buttons a {
       color: var(--ddd-theme-primary);
       font-size: var(--portfolio-very-theme-label-font-size, var(--ddd-font-size-s));
-      padding: 10px;
-      border-radius: 5px;
+      padding: var(--ddd-spacing-3);
+      border-radius: var(--ddd-radius-sm);
       cursor: pointer;
       text-decoration: none;
     }
