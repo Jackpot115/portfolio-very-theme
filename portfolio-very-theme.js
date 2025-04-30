@@ -56,7 +56,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       }
 
       a {
-        color: white;
+        color: var(--ddd-theme-default-white);
         font-size: var(--ddd-font-size-m);
       }
       scroll-button {
@@ -73,7 +73,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
 
   your-banner .top-bar-buttons a {
     display: block;
-    margin: 5px 0;
+    margin: var(--ddd-spacing-2);
   }
 }
 
