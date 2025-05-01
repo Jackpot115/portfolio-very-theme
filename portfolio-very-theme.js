@@ -6,6 +6,7 @@ import { LitElement, html, css } from "lit";
 import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
 import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
 import '@haxtheweb/scroll-button/scroll-button.js';
+import '@haxtheweb/star-rating/star-rating.js';
 
 
 /**
@@ -93,6 +94,7 @@ export class PortfolioVeryTheme extends DDDSuper(I18NMixin(LitElement)) {
       </your-banner>
       <div class="wrapper" @page-added="${this.addPage}">
       <slot></slot>
+      <star-rating></star-rating>
       <scroll-button></scroll-button>
     </div>`;
   }

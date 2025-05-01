@@ -55,8 +55,11 @@ class YourBanner extends LitElement {
     const target = document.querySelector(`[pagenumber="${num}"]`);
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState({ page: 'new' }, 'New Page Title', `#screen-${num}`);
     }
   }
 }
+
+
 
 globalThis.customElements.define(YourBanner.tag, YourBanner);
